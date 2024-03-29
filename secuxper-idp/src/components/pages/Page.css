@@ -1,0 +1,59 @@
+/* 
+  Page 
+*/
+.page__wrapper {
+  width: 100%;
+  /* display: flex;
+  justify-content: center; */
+  margin: 10px 0 0 10px;
+  min-width: max-content;
+}
+
+.page__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page__header-title {
+  display: flex;
+  align-items: center;
+}
+
+.page__header-main-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  margin-right: 12px;
+}
+
+.page__header-favourite__icon {
+  cursor: pointer;
+}
+
+.page__header-help {
+  font-size: 0.7rem;
+}
+
+.page__header-help-link {
+  text-decoration: none;
+  color: gray;
+  padding-left: 4px;
+}
+
+.page__header-help__icon {
+  color: rgb(60, 115, 167);
+}
+
+.page__header-help__icon:hover {
+  cursor: pointer;
+}
+
+.page__header-path {
+  float: inline-end;
+}
+
+.page__header-path-link {
+  text-decoration: none;
+  color: black;
+  padding: 0 10px;
+}

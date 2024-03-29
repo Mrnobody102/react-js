@@ -1,0 +1,16 @@
+.setting__history-list__process-detail-link {
+  border: 1px solid var(--text-color) !important;
+  border-radius: 3px;
+  padding: 4px 6px;
+  color: black;
+  text-decoration: none;
+}
+
+.setting__history-list__process-detail-link :hover {
+  cursor: pointer;
+}
+
+.setting__history-list__number {
+  font-weight: 600;
+  color: #4f06fa;
+}

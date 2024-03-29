@@ -3,13 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@reduxjs/toolkit": "^2.2.2",
+    "@tanstack/react-table": "^8.14.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "formik": "^2.4.5",
+    "jquery": "^3.7.1",
+    "json-server": "^1.0.0-alpha.23",
+    "jstree": "^3.3.16",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
+    "react-data-table-component": "^7.6.2",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-sweetalert2": "^0.6.0",
+    "react-table": "^7.8.0",
+    "redux": "^5.0.1",
+    "rsuite": "^5.56.0",
+    "styled-component": "^2.8.0",
+    "uuid": "^9.0.1",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +54,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "eslint": "^8.57.0",
+    "nodemon": "^3.1.0"
   }
 }

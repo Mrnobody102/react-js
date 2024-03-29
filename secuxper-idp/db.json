@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "name": "huy123",
+      "password": "12345678",
+      "id": "e345"
+    },
+    {
+      "id": "1f99",
+      "name": "s",
+      "password": "s"
+    },
+    {
+      "id": "f370",
+      "name": "a",
+      "password": "a"
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "text": "LG CNS",
+      "icon": "fas fa-plus-square",
+      "children": [
+        {
+          "id": 11,
+          "text": "Alex",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 12,
+          "text": "John",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 13,
+          "text": "Marry",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Fsoft",
+      "icon": "fas fa-plus-square",
+      "children": [
+        {
+          "id": 21,
+          "text": "Mark",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 22,
+          "text": "Jack",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 23,
+          "text": "Kathy",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Google",
+      "icon": "fas fa-plus-square",
+      "children": [
+        {
+          "id": 31,
+          "text": "Jane",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 32,
+          "text": "Alice",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 33,
+          "text": "Author",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Meta",
+      "icon": "fas fa-plus-square",
+      "children": [
+        {
+          "id": 41,
+          "text": "Franky",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 42,
+          "text": "Lukeshaw",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        },
+        {
+          "id": 43,
+          "text": "Lauren",
+          "icon": "fas fa-user",
+          "state": { "selected": false }
+        }
+      ]
+    }
+  ],
+  "custom_users": [{}]
+}

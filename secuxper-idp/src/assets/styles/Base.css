@@ -1,0 +1,247 @@
+/* Global design definitions */
+:root {
+  /* Color */
+  --primary-color: #095480;
+  --primary-hover-color: #1e4257;
+  --primary-light-color: #d4d8da;
+  --primary-bg-light-color: #d9e2e6;
+  --primary-bg-color: rgb(233, 233, 233);
+  --main-bg-color: rgb(245, 245, 245);
+  --border-color: rgb(192, 192, 192);
+  --favourite-color: rgb(230, 75, 101);
+  --favourite-light-color: rgb(252, 214, 220);
+  --text-color: gray;
+  --text-hover-color: rgb(75, 75, 75);
+  --table-header-color: rgb(221, 221, 221);
+  --table-stripe-color: rgb(230, 230, 230);
+
+  /* Font */
+  --small-font: 0.8rem;
+  --medium-font: 1rem;
+  --large-font: 1.2rem;
+  --huge-font: 2rem;
+
+  /* Height */
+  --primary-height: 28px;
+}
+
+/* Global style */
+
+.content {
+  height: min-content;
+  min-height: 90vh;
+  display: flex;
+  background-color: var(--main-bg-color);
+  font-size: var(--small-font);
+  overflow: scroll;
+}
+
+.element-wrapper--medium {
+  background-color: white;
+  max-width: 300px;
+  display: grid;
+  padding: 0 4px 0 6px;
+  margin: 0 2px;
+  place-items: center;
+}
+
+/* Specific styles */
+.pink-color {
+  color: var(--favourite-color);
+}
+
+/* Link style */
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+/* Border addition */
+.border-top {
+  border-top: 1px solid var(--border-color);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.border-left {
+  border-left: 1px solid var(--border-color);
+}
+
+.border-right {
+  border-right: 1px solid var(--border-color);
+}
+
+/* Button style */
+
+.btn__class {
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+
+.btn__class:hover {
+  cursor: pointer;
+}
+
+.btn__primary {
+  color: white;
+  background-color: var(--primary-color);
+  border: 1px solid gray;
+}
+
+.btn__primary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btn__confirm {
+  color: white;
+  background-color: var(--primary-color);
+  border: 1px solid gray;
+}
+
+.btn__confirm:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.btn__disable {
+  color: gray;
+  background-color: var(--primary-bg-color);
+  border: 1px solid gray;
+}
+
+.btn__close {
+  background-color: white;
+  border: 1px solid gray;
+  margin-left: 12px;
+}
+
+.btn__close:hover {
+  background-color: var(--border-color);
+}
+
+.group__btn {
+  float: right;
+  padding: 12px 20px 20px 0;
+  font-size: small;
+}
+
+/* Icon */
+.icon__wrapper-main {
+  background-color: white;
+  height: 28px;
+  width: 36px;
+  display: grid;
+  place-items: center;
+}
+
+/* Input field style */
+
+.label--light-border {
+  border: 1px solid var(--border-color);
+}
+
+.label-common {
+  padding: 4px 6px;
+  height: 28px;
+}
+
+.input {
+  padding: 4px 6px;
+  height: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input--medium {
+  width: 240px;
+}
+
+.input--light-border {
+  border: 1px solid var(--border-color) !important;
+}
+
+.input__strength-label {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.input_bg-primary {
+  background-color: var(--main-bg-color);
+  margin-right: 4px;
+}
+
+.field-require {
+  color: var(--favourite-color);
+}
+
+.text__error {
+  color: var(--favourite-color);
+  text-align: left;
+  font-size: small;
+  margin: 2px 0;
+}
+
+/* Select style */
+.select--bg-secondary {
+  background-color: rgb(255, 255, 227);
+}
+
+.select--medium {
+  height: 28px;
+  border: none;
+}
+
+.select__paging {
+  height: 28px;
+  border: 1px solid var(--border-color);
+  width: 56px;
+  margin-right: 10px;
+}
+
+/* Span */
+.span--pink {
+  color: var(--favourite-color);
+}
+
+/* Modal */
+.modal-content {
+  font-size: small;
+  border-radius: 4px !important;
+}
+
+/* Data table */
+.datatable-title {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.rdt_TableCol {
+  background-color: var(--primary-bg-color);
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.rdt_TableHeadRow:last-child {
+  border-right: 1px solid var(--border-color);
+}
+
+/* Main function screen */
+.main-function__header-path {
+  font-size: small;
+  display: flex;
+  align-items: center;
+}
+
+.main-function__header-path-link {
+  color: black;
+  text-decoration: none;
+  margin: 0 4px;
+}
