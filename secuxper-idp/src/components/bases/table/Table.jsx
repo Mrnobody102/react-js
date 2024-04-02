@@ -48,6 +48,10 @@ const Style = styled.div`
       }
     }
 
+    td:hover {
+      cursor: pointer;
+    }
+
     th {
       background-color: var(--table-header-color);
     }
@@ -162,6 +166,8 @@ const Style = styled.div`
     background-color: white;
     padding: 100px 0;
   }
+
+  
 `;
 
 
@@ -175,7 +181,8 @@ function Table({
   loading,
   pageCount: controlledPageCount,
   list, // list to show or hide
-  columnShowDetails
+  columnShowDetails,
+  setDataToDetail
 }) {
 
   const {
@@ -184,7 +191,6 @@ function Table({
     headerGroups,
     prepareRow,
     page,
-    rows,
     canPreviousPage,
     canNextPage,
     pageCount,
@@ -217,24 +223,90 @@ function Table({
   );
 
   const [modalShow, setModalShow] = useState(false);
-  const [showDetailState, setShowDetailState] = useState(false)
+  const [showDetailState, setShowDetailState] = useState(true);
+  const [selectedRow, setSelectedRow] = useState(null);
 
   React.useEffect(() => {
     fetchData({ sortBy, pageIndex, pageSize });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchData]);
 
   React.useEffect(() => {
     filterTable(sortBy, pageIndex, pageSize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [submitState, sortBy, pageIndex, pageSize]);
 
-  const handleShowDetail = (columnShowDetails, allColumns) => {
-    allColumns.forEach((column) => {
-      if (columnShowDetails.includes(column.id)) {
+  /**
+   * Handle the show/hide detail setting of a row in the table
+   * @param {object} row - The row data of the clicked row
+   * @param {array} columnShowDetails - The columns that need to show/hide
+   * @param {array} allColumns - All columns of the table
+   */
+  const handleShowDetail = (row, columnShowDetails, allColumns) => {
+    // Toggle the detail setting state
+    setShowDetailState(prevState => !prevState);
+
+    // Set the clicked row data to the state
+    setDataToDetail(row);
+
+    // If the detail is shown
+    if (showDetailState) {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // If the column is in the columns that need to show/hide
+        if (columnShowDetails.includes(column.id)) {
+          // Show the column
+          column.toggleHidden(false);
+        } else {
+          // Hide the column
+          column.toggleHidden(true);
+        }
+      });
+    } else {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // Show the column
         column.toggleHidden(false);
-      } else {
-        column.toggleHidden(true);
-      }
-    });
+      });
+    }
+  };
+
+  /**
+   * Handle the show/hide detail setting of the table
+   * @param {object} row - The row data of the clicked row
+   * @param {array} columnShowDetails - The columns that need to show/hide
+   * @param {array} allColumns - All columns of the table
+   */
+  const handleShowDetailSetting = (row, columnShowDetails, allColumns) => {
+    // Toggle the detail setting state
+    setShowDetailState(prevState => !prevState);
+
+    // Set the clicked row data to the state
+    setDataToDetail(row);
+
+    // Set the selected row to null
+    setSelectedRow(null);
+
+    // If the detail is shown
+    if (showDetailState) {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // If the column is in the columns that need to show/hide
+        if (columnShowDetails.includes(column.id)) {
+          // Show the column
+          column.toggleHidden(false);
+        } else {
+          // Hide the column
+          column.toggleHidden(true);
+        }
+      });
+    } else {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // Show the column
+        column.toggleHidden(false);
+      });
+    }
   };
 
   return (
@@ -281,7 +353,18 @@ function Table({
               onHide={() => setModalShow(false)}
             />
             <i className="fas fa-stop table__icon-stop"></i>
-            <i className="fas fa-pause table__icon-pause" onClick={() => handleShowDetail(columnShowDetails, allColumns)}></i>
+            <i className="fas fa-pause table__icon-pause" onClick={() => handleShowDetailSetting({
+              original: {
+                accessIp: "",
+                loginId: "",
+                name: "",
+                processMenu: "",
+                processType: "",
+                processTask: "",
+                privacyItem: "",
+                processDatetime: ""
+              }
+            }, columnShowDetails, allColumns)}></i>
           </div>
         </div>
 
@@ -320,11 +403,22 @@ function Table({
             <tbody {...getTableBodyProps()}>
               {page.map((row, i) => {
                 prepareRow(row);
+                const isSelected = selectedRow && selectedRow.id === row.id;
+
                 return (
-                  <tr key={uuidv4()} {...row.getRowProps()}>
+                  <tr
+                    key={uuidv4()}
+                    {...row.getRowProps()}
+                    onClick={() => {
+                      setSelectedRow(row); // Update selectedRow when a row is clicked
+                      setDataToDetail(row);
+                    }}
+                    onDoubleClick={() => handleShowDetail(row, columnShowDetails, allColumns)}
+
+                  >
                     {row.cells.map((cell) => {
                       return (
-                        <td {...cell.getCellProps()} onDoubleClick={() => handleShowDetail(columnShowDetails, allColumns)} >{cell.render("Cell")}</td>
+                        <td {...cell.getCellProps()} className={isSelected ? 'table__row-select' : ''}>{cell.render("Cell")}</td>
                       );
                     })}
                   </tr>
