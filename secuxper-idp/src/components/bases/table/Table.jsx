@@ -138,7 +138,6 @@ const Style = styled.div`
     padding: 6px 7px 4px 7px;
     border: 1px solid var(--border-color);
     border-radius: 2px;
-    color: black !important;
   }
 
   .table__icon-pause {
@@ -166,8 +165,6 @@ const Style = styled.div`
     background-color: white;
     padding: 100px 0;
   }
-
-  
 `;
 
 
@@ -181,8 +178,12 @@ function Table({
   loading,
   pageCount: controlledPageCount,
   list, // list to show or hide
+  columnsToShow,
+  setColumnsToShow,
   columnShowDetails,
-  setDataToDetail
+  setDataToDetail,
+  showDetailState,
+  setShowDetailState
 }) {
 
   const {
@@ -223,7 +224,7 @@ function Table({
   );
 
   const [modalShow, setModalShow] = useState(false);
-  const [showDetailState, setShowDetailState] = useState(true);
+
   const [selectedRow, setSelectedRow] = useState(null);
 
   React.useEffect(() => {
@@ -306,8 +307,42 @@ function Table({
         // Show the column
         column.toggleHidden(false);
       });
+
     }
   };
+
+  const handleHideDetailSetting = (row, columnShowDetails, allColumns) => {
+    // Toggle the detail setting state
+    setShowDetailState(prevState => !prevState);
+
+    // Set the clicked row data to the state
+    setDataToDetail(row);
+
+    // Set the selected row to null
+    setSelectedRow(null);
+
+    // If the detail is shown
+    if (showDetailState) {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // If the column is in the columns that need to show/hide
+        if (columnShowDetails.includes(column.id)) {
+          // Show the column
+          column.toggleHidden(false);
+        } else {
+          // Hide the column
+          column.toggleHidden(true);
+        }
+      });
+    } else {
+      // Loop through all columns
+      allColumns.forEach((column) => {
+        // Show the column
+        column.toggleHidden(false);
+      });
+
+    }
+  }
 
   return (
     <div className="d-flex">
@@ -350,10 +385,23 @@ function Table({
               show={modalShow}
               list={list}
               allColumns={allColumns}
+              columnsToShow={columnsToShow}
               onHide={() => setModalShow(false)}
             />
-            <i className="fas fa-stop table__icon-stop"></i>
-            <i className="fas fa-pause table__icon-pause" onClick={() => handleShowDetailSetting({
+            <i className={showDetailState ? "fas fa-stop table__icon-stop icon__active" : "fas fa-stop table__icon-stop"} onClick={() => handleHideDetailSetting(
+              {
+                original: {
+                  accessIp: "",
+                  loginId: "",
+                  name: "",
+                  processMenu: "",
+                  processType: "",
+                  processTask: "",
+                  privacyItem: "",
+                  processDatetime: ""
+                }
+              }, columnShowDetails, allColumns)}></i>
+            <i className={showDetailState ? "fas fa-pause table__icon-pause" : "fas fa-pause table__icon-pause icon__active"} onClick={() => handleShowDetailSetting({
               original: {
                 accessIp: "",
                 loginId: "",

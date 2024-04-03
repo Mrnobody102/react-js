@@ -1,6 +1,11 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
+/**
+ * PrivacyItem component
+ *
+ * Component for rendering a modal with privacy item information
+ */
 function PrivacyItem(props) {
   return (
     <Modal
@@ -9,20 +14,60 @@ function PrivacyItem(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
+      {/* Modal header */}
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Privacy item
         </Modal.Title>
       </Modal.Header>
+
+      {/* Modal body */}
       <Modal.Body>
-        <h4>Privacy item</h4>
-        <p>Privacy item</p>
+        <table className="table">
+          <thead>
+            <tr className="table__header">
+              <td className="table__header">Privacy</td>
+              <td className="table__header">Explaination</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">loginId</td>
+              <td className="table__body">Login ID</td>
+            </tr>
+          </tbody>
+        </table>
       </Modal.Body>
+
+      {/* Modal footer */}
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <div className="btn__class btn__close" onClick={props.onHide}>
+          Close
+        </div>
       </Modal.Footer>
     </Modal>
   );
 }
+
 
 export default PrivacyItem;

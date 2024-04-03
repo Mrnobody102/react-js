@@ -10,22 +10,39 @@ function Columns(props) {
     list.some((item) => item.id === column.id)
   );
 
+  /**
+   * Handle the toggle of the column selection
+   * @param {string} columnId - The id of the column to toggle
+   */
   const handleToggleColumn = (columnId) => {
+    // If the column is already selected
     if (selectedColumns.includes(columnId)) {
+      // Remove it from the selected columns
       setSelectedColumns(selectedColumns.filter((id) => id !== columnId));
     } else {
+      // Add the column to the selected columns
       setSelectedColumns([...selectedColumns, columnId]);
     }
   };
 
+
+  /**
+   * Handle the show/hide table column
+   */
   const handleShowTableColumn = () => {
+    // Loop through all columns
     columnsToShow.forEach((column) => {
+      // If the column is selected to hide
       if (selectedColumns.includes(column.id)) {
+        // Hide the column
         column.toggleHidden(true);
       } else {
+        // Show the column
         column.toggleHidden(false);
       }
     });
+
+    // Call the onHide function to hide the modal
     onHide();
   };
 

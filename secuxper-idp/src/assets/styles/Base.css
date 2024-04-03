@@ -140,6 +140,10 @@ a:hover {
   place-items: center;
 }
 
+.icon__active {
+  color: black !important;
+}
+
 /* Input field style */
 
 .label--light-border {

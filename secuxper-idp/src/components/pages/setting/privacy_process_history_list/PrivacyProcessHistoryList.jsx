@@ -14,7 +14,11 @@ import Datepicker from "../../../bases/input/datepicker/Datepicker";
 import TaskDetail from "./subcomponents/TaskDetail";
 import $ from "jquery"
 
-/* HuyPQ62 */
+/**
+ * HuyPQ62
+ * Component to show Privacy process history list
+ * @function PrivacyProcessHistoryList
+ */
 function PrivacyProcessHistoryList() {
 
   // Define columns of table
@@ -116,6 +120,9 @@ function PrivacyProcessHistoryList() {
   const [modalUserInformationShow, setModalUserInformationShow] =
     useState(null);
   const [modalPrivacyItemShow, setModalPrivacyItemShow] = useState(null);
+
+  const [columnsToShow, setColumnsToShow] = useState(true);
+  const [showDetailState, setShowDetailState] = useState(true);
 
   // Show button of Modal process detail
   const processDetail = ({ id, link }) => (
@@ -414,130 +421,134 @@ function PrivacyProcessHistoryList() {
           totalSize={totalSize}
           pageCount={pageCount}
           list={hiddenColumns}
+          columnsToShow={columnsToShow}
+          setColumnsToShow={setColumnsToShow}
           columnShowDetails={showColumnIdsAfterShowProcessDetails}
+          showDetailState={showDetailState}
+          setShowDetailState={setShowDetailState}
           setDataToDetail={setDataToDetail}
         ></Table>
-        { }
-        <div id="tableRowDetail" className="table__record-detail">
-          <div className="table__record-detail__wrapper">
-            <div className="table__record-detail-title">
-              | Privacy handler
+        {!showDetailState && (
+          <div id="tableRowDetail" className="table__record-detail">
+            <div className="table__record-detail__wrapper">
+              <div className="table__record-detail-title">
+                | Privacy handler
+              </div>
+              <div className="table__record-detail-group-container">
+                <div className="table__record-detail-group">
+                  <div className="table__record-detail-item">
+                    <div className="table__record-detail-label"> Login ID</div>
+                    <div className="table__record-detail-content" id="tbLoginId">
+
+                    </div>
+                  </div>
+                  <div className="table__record-detail-item">
+                    <div className="table__record-detail-label">Employee ID</div>
+                    <div className="table__record-detail-content" >
+                      EID102
+                    </div>
+                  </div>
+                </div>
+                <div className="table__record-detail-item">
+                  <div className="table__record-detail-label">Name</div>
+                  <div className="table__record-detail-content" id="tbName">
+
+                  </div>
+                </div>
+                <div className="table__record-detail-group">
+                  <div className="table__record-detail-item">
+                    <div className="table__record-detail-label">Company</div>
+                    <div className="table__record-detail-content" id="tbCompany">
+                      LG
+                    </div>
+                  </div>
+                  <div className="table__record-detail-item">
+                    <div className="table__record-detail-label">Department</div>
+                    <div className="table__record-detail-content">
+                      IT2
+                    </div>
+                  </div>
+                </div>
+                <div className="table__record-detail-item">
+                  <div className="table__record-detail-label">Access IP</div>
+                  <div className="table__record-detail-content" id="tbAccessIp">
+
+                  </div>
+                </div>
+                <div className="table__record-detail-item">
+                  <div className="table__record-detail-label">Process date and time</div>
+                  <div className="table__record-detail-content" id="tbProcessDatetime">
+
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="table__record-detail-group-container">
-              <div className="table__record-detail-group">
+            <div className="table__record-detail__wrapper">
+              <div className="table__record-detail-title">
+                | Privacy process
+              </div>
+              <div className="table__record-detail-group-container">
+
                 <div className="table__record-detail-item">
-                  <div className="table__record-detail-label"> Login ID</div>
-                  <div className="table__record-detail-content" id="tbLoginId">
+                  <div className="table__record-detail-label">Process menu</div>
+                  <div className="table__record-detail-content" id="tbProcessMenu">
 
                   </div>
                 </div>
                 <div className="table__record-detail-item">
-                  <div className="table__record-detail-label">Employee ID</div>
-                  <div className="table__record-detail-content" >
-                    EID102
+                  <div className="table__record-detail-label">Process type</div>
+                  <div className="table__record-detail-content" id="tbProcessType">
+                    Setting
+                  </div>
+                </div>
+                <div className="table__record-detail-item">
+                  <div className="table__record-detail-label">Process task</div>
+                  <div className="table__record-detail-content p-2" id="tbProcessTask">
+                    <Link
+                      onClick={() => setModalTaskDetailShow(1)}
+                      className="setting__history-list__process-detail-link pe-2"
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i>
+                      <span className="ms-1">Task detail</span>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Name</div>
-                <div className="table__record-detail-content" id="tbName">
+            </div>
+            <div className="table__record-detail__wrapper">
+              <div className="table__record-detail-title">
+                | Privacy subject
+              </div>
+              <div className="table__record-detail-group-container">
 
-                </div>
-              </div>
-              <div className="table__record-detail-group">
                 <div className="table__record-detail-item">
-                  <div className="table__record-detail-label">Company</div>
-                  <div className="table__record-detail-content" id="tbCompany">
-                    LG
-                  </div>
-                </div>
-                <div className="table__record-detail-item">
-                  <div className="table__record-detail-label">Department</div>
+                  <div className="table__record-detail-label">User information</div>
                   <div className="table__record-detail-content">
-                    IT2
+                    <Link
+                      onClick={() => setModalUserInformationShow(1)}
+                      className="setting__history-list__process-detail-link pe-2"
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i>
+                      <span className="ms-1">3</span>
+                    </Link>
+                  </div>
+                </div>
+                <div className="table__record-detail-item">
+                  <div className="table__record-detail-label">Privacy item</div>
+                  <div className="table__record-detail-content" id="tbPrivacyItem">
+                    <Link
+                      onClick={() => setModalPrivacyItemShow(1)}
+                      className="setting__history-list__process-detail-link pe-2"
+                    >
+                      <i className="fa-solid fa-up-right-from-square"></i>
+                      <span className="ms-1">100</span>
+                    </Link>
                   </div>
                 </div>
               </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Access IP</div>
-                <div className="table__record-detail-content" id="tbAccessIp">
-
-                </div>
-              </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Process date and time</div>
-                <div className="table__record-detail-content" id="tbProcessDatetime">
-
-                </div>
-              </div>
             </div>
           </div>
-          <div className="table__record-detail__wrapper">
-            <div className="table__record-detail-title">
-              | Privacy process
-            </div>
-            <div className="table__record-detail-group-container">
-
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Process menu</div>
-                <div className="table__record-detail-content" id="tbProcessMenu">
-
-                </div>
-              </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Process type</div>
-                <div className="table__record-detail-content" id="tbProcessType">
-                  Setting
-                </div>
-              </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Process task</div>
-                <div className="table__record-detail-content p-2" id="tbProcessTask">
-                  <Link
-                    onClick={() => setModalTaskDetailShow(1)}
-                    className="setting__history-list__process-detail-link pe-2"
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i>
-                    <span className="ms-1">Task detail</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="table__record-detail__wrapper">
-            <div className="table__record-detail-title">
-              | Privacy subject
-            </div>
-            <div className="table__record-detail-group-container">
-
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">User information</div>
-                <div className="table__record-detail-content">
-                  <Link
-                    onClick={() => setModalTaskDetailShow(1)}
-                    className="setting__history-list__process-detail-link pe-2"
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i>
-                    <span className="ms-1">3</span>
-                  </Link>
-                </div>
-              </div>
-              <div className="table__record-detail-item">
-                <div className="table__record-detail-label">Privacy item</div>
-                <div className="table__record-detail-content" id="tbPrivacyItem">
-                  <Link
-                    onClick={() => setModalTaskDetailShow(1)}
-                    className="setting__history-list__process-detail-link pe-2"
-                  >
-                    <i className="fa-solid fa-up-right-from-square"></i>
-                    <span className="ms-1">100</span>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        )}
       </div>
       <TaskDetail
         id={modalTaskDetailShow}

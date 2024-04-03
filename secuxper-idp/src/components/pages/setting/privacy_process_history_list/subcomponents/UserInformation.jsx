@@ -1,29 +1,70 @@
 import React from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
+/**
+ * UserInformation component
+ *
+ * Component for rendering a modal with user information
+ *
+ * @param {object} props - Component properties
+ * @returns {JSX.Element} - Rendered component
+ */
 function UserInformation(props) {
+  // Render a modal with user information
   return (
     <Modal
       {...props}
-      size="md"
+      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
+      {/* Modal header */}
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           User Information
         </Modal.Title>
       </Modal.Header>
+
+      {/* Modal body */}
       <Modal.Body>
-        <h4> {props.id}</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <table className="table">
+          <thead>
+            <tr className="table__header">
+              <td className="table__header">Company</td>
+              <td className="table__header">Department</td>
+              <td className="table__header">Name</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="table__body">
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+            </tr>
+            <tr className="table__body">
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+              <td className="table__body">company</td>
+            </tr>
+          </tbody>
+        </table>
       </Modal.Body>
+
+      {/* Modal footer */}
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <div className="btn__class btn__close" onClick={props.onHide}>
+          Close
+        </div>
       </Modal.Footer>
     </Modal>
   );
