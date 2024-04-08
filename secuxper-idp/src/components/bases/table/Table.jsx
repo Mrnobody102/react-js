@@ -179,7 +179,6 @@ function Table({
   pageCount: controlledPageCount,
   list, // list to show or hide
   columnsToShow,
-  setColumnsToShow,
   columnShowDetails,
   setDataToDetail,
   showDetailState,

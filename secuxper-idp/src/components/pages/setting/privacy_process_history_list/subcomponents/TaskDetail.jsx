@@ -33,6 +33,7 @@ function TaskDetail(props) {
               <div className="table__record-detail-label">Call URL</div>
               <div className="table__record-detail-content" id="tbName">
                 {/* Show call URL */}
+                /setting/privacy_process_history_list
               </div>
             </div>
 
@@ -41,6 +42,7 @@ function TaskDetail(props) {
               <div className="table__record-detail-label">Process details</div>
               <div className="table__record-detail-content" id="tbAccessIp">
                 {/* Show process details */}
+                User Management {">"} User list
               </div>
             </div>
 
@@ -49,6 +51,7 @@ function TaskDetail(props) {
               <div className="table__record-detail-label">Process reason</div>
               <div className="table__record-detail-content" id="tbProcessDatetime">
                 {/* Show process reason */}
+                List all users
               </div>
             </div>
           </div>

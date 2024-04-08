@@ -53,6 +53,7 @@
   border: 1px solid var(--border-color);
   border-right: none;
   border-bottom: none;
+  overflow: visible;
 }
 
 .table__row-select {

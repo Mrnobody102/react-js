@@ -37,24 +37,26 @@ function UserInformation(props) {
           </thead>
           <tbody>
             <tr className="table__body">
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
+              <td className="table__body">IDP +</td>
+              <td className="table__body"></td>
+              <td className="table__body">IDP Solution Admin</td>
             </tr>
             <tr className="table__body">
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-            </tr>
-            <tr className="table__body">
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-            </tr>
-            <tr className="table__body">
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
-              <td className="table__body">company</td>
+              <td className="table__body">IDP +</td>
+              <td className="table__body"></td>
+              <td className="table__body">IDP Solution Admin</td>
+            </tr> <tr className="table__body">
+              <td className="table__body">IDP +</td>
+              <td className="table__body"></td>
+              <td className="table__body">IDP Solution Admin</td>
+            </tr> <tr className="table__body">
+              <td className="table__body">IDP +</td>
+              <td className="table__body"></td>
+              <td className="table__body">IDP Solution Admin</td>
+            </tr> <tr className="table__body">
+              <td className="table__body">IDP +</td>
+              <td className="table__body"></td>
+              <td className="table__body">IDP Solution Admin</td>
             </tr>
           </tbody>
         </table>
