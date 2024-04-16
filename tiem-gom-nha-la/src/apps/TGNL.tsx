@@ -1,7 +1,11 @@
-import React from 'react'
+import Layout from '~/layouts/Layout'
 
 function TGNL() {
-  return <div>TGNL</div>
+  return (
+    <div className='App'>
+      <Layout />
+    </div>
+  )
 }
 
 export default TGNL

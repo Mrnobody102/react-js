@@ -1,5 +1,19 @@
-function Checkbox() {
-  return <div>Checkbox</div>
+import { Checkbox } from 'antd'
+import './Input.scss'
+
+interface Props {
+  label: string
 }
 
-export default Checkbox
+const CustomCheckbox: React.FC<Props> = ({ label }) => {
+  return (
+    <>
+      <Checkbox />{' '}
+      <label className='label--checkbox' htmlFor=''>
+        {label}
+      </label>
+    </>
+  )
+}
+
+export default CustomCheckbox

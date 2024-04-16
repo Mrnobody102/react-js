@@ -1,0 +1,23 @@
+:root {
+  // COLOR
+  --primary-color: #577b6d;
+  --secondary-color: #f0ede8;
+  --background-color: #f0ede8;
+  --border-color: rgb(121, 118, 118);
+  --darkerborder-color: rgb(96, 96, 96);
+  --inputborder-color: #ababab;
+  --line-color: #babab8;
+  --secondary-text-color: #4f4f4f;
+
+  --placeholder-color: #a9a9a8;
+
+  // TEXT-TYPO
+  --heading-1: 1.5rem;
+  --heading-2: 1.3rem;
+  --heading-3: 1rem;
+  --heading-4: 0.8rem;
+
+  // BORDER
+  --primary-boder: 2px solid var(--darkerborder-color);
+  --secondary-boder: 1px solid var(--border-color);
+}

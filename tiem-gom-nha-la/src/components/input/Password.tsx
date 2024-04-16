@@ -10,7 +10,7 @@ const Text: React.FC<Props> = ({ placeholder, icon: Icon }) => {
   return (
     <div className='input input--text'>
       {Icon && <Icon className='icon' />}
-      <input type='text' placeholder={placeholder} />
+      <input type='password' placeholder={placeholder} />
     </div>
   )
 }

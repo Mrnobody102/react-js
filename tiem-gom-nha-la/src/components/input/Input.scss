@@ -1,0 +1,65 @@
+input {
+  background-color: var(--background-color);
+  border: 1px solid var(--inputborder-color);
+}
+
+.input {
+  position: relative;
+  padding: 10px 0;
+}
+
+// Text
+
+.input--text {
+  background-color: var(--background-color);
+}
+
+.input input[type='text'] {
+  width: 80%;
+  height: 36px;
+  padding-left: 36px;
+}
+
+.input input[type='text']::placeholder {
+  color: var(--placeholder-color);
+  font-size: small;
+  font-family: 'Alexandria';
+  font-weight: 200;
+}
+
+.input input[type='password'] {
+  width: 80%;
+  height: 36px;
+  padding-left: 36px;
+}
+
+.input input[type='password']::placeholder {
+  color: var(--placeholder-color);
+  font-size: small;
+  font-family: 'Alexandria';
+  font-weight: 200;
+}
+
+.input .icon {
+  position: absolute;
+  left: 10px; /* Điều chỉnh khoảng cách từ biên trái */
+  top: 50%; /* Đặt icon ở giữa chiều cao của input */
+  transform: translateY(-50%);
+  color: var(--placeholder-color);
+}
+
+// Checkbox
+.ant-checkbox .ant-checkbox-inner {
+  background-color: var(--background-color);
+  border-radius: 0;
+  border: 1px solid var(--primary-color);
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color);
+}
+
+.label--checkbox {
+  font-size: small;
+  font-family: sans-serif;
+}

@@ -1,12 +1,10 @@
-import { FloatButton } from 'antd'
-import ButtonGroup from 'antd/es/button/button-group'
+import './Button.scss'
+interface Props {
+  name: string
+}
 
-function Button() {
-  return (
-    <ButtonGroup>
-      <FloatButton />
-    </ButtonGroup>
-  )
+const Button: React.FC<Props> = ({ name }) => {
+  return <button className='button button--primary'>{name}</button>
 }
 
 export default Button

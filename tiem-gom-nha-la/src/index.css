@@ -1,5 +1,17 @@
+@import './assets/styles/variable.scss';
+@import './assets/styles/typo.scss';
+@import './assets/styles/icons.scss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@font-face {
+  font-family: 'Alexandria';
+  src: url('./assets/fonts/Alexandria/Alexandria-VariableFont_wght.ttf');
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Alexandria';
   line-height: 1.5;
   font-weight: 400;
 
@@ -25,6 +37,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -57,7 +70,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--background-color);
   }
   a:hover {
     color: #747bff;
@@ -65,4 +78,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+#root,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
