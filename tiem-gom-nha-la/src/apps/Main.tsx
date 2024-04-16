@@ -1,14 +1,12 @@
 import './Main.scss'
-import Auth from '../pages/auth/Auth'
-import MasterTitle from '../components/title/MasterTitle'
+import { Outlet } from 'react-router-dom'
+import Header from '../layouts/header/Header'
 
 function Main() {
   return (
     <div className='App'>
-      <header className='app__title'>
-        <MasterTitle />
-      </header>
-      <Auth />
+      <Header />
+      <Outlet />
     </div>
   )
 }

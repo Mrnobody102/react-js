@@ -1,6 +1,5 @@
 @import './assets/styles/variable.scss';
 @import './assets/styles/typo.scss';
-@import './assets/styles/icons.scss';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -81,6 +80,7 @@ button:focus-visible {
 }
 
 #root,
+body,
 html {
   height: 100%;
   width: 100%;
