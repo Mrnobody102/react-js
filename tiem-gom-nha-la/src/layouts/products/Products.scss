@@ -1,0 +1,29 @@
+.sidebar {
+  flex: 1;
+  text-align: left;
+}
+
+.sidebar__title {
+  font-size: var(--heading-2);
+  font-weight: 500;
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__item {
+  font-size: var(--heading-3);
+  font-weight: 400;
+}
+
+.products {
+  flex: 3;
+}
+
+.product-item {
+  margin-right: 32px;
+  margin-bottom: 32px;
+  text-align: left;
+}

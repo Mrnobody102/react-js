@@ -6,46 +6,45 @@ input {
 .input {
   position: relative;
   padding: 10px 0;
+
+  input[type='text'] {
+    width: 80%;
+    height: 36px;
+    padding-left: 36px;
+  }
+
+  input[type='text']::placeholder {
+    color: var(--placeholder-color);
+    font-size: small;
+    font-family: 'Alexandria';
+    font-weight: 200;
+  }
+
+  input[type='password'] {
+    width: 80%;
+    height: 36px;
+    padding-left: 36px;
+  }
+
+  input[type='password']::placeholder {
+    color: var(--placeholder-color);
+    font-size: small;
+    font-family: 'Alexandria';
+    font-weight: 200;
+  }
+
+  .icon {
+    position: absolute;
+    left: 10px; /* Điều chỉnh khoảng cách từ biên trái */
+    top: 50%; /* Đặt icon ở giữa chiều cao của input */
+    transform: translateY(-50%);
+    color: var(--placeholder-color);
+  }
 }
 
 // Text
-
 .input--text {
   background-color: var(--background-color);
-}
-
-.input input[type='text'] {
-  width: 80%;
-  height: 36px;
-  padding-left: 36px;
-}
-
-.input input[type='text']::placeholder {
-  color: var(--placeholder-color);
-  font-size: small;
-  font-family: 'Alexandria';
-  font-weight: 200;
-}
-
-.input input[type='password'] {
-  width: 80%;
-  height: 36px;
-  padding-left: 36px;
-}
-
-.input input[type='password']::placeholder {
-  color: var(--placeholder-color);
-  font-size: small;
-  font-family: 'Alexandria';
-  font-weight: 200;
-}
-
-.input .icon {
-  position: absolute;
-  left: 10px; /* Điều chỉnh khoảng cách từ biên trái */
-  top: 50%; /* Đặt icon ở giữa chiều cao của input */
-  transform: translateY(-50%);
-  color: var(--placeholder-color);
 }
 
 // Checkbox
@@ -62,4 +61,27 @@ input {
 .label--checkbox {
   font-size: small;
   font-family: sans-serif;
+}
+
+// Counter
+.counter-container {
+  display: flex;
+  border: 1px solid var(--inputborder-color);
+  width: max-content;
+  align-items: center;
+}
+
+.counter {
+  border: none;
+  width: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.counter-minus,
+.counter-plus {
+  font-size: large;
+  padding: 0 8px;
+  font-weight: bold;
+  cursor: pointer;
 }

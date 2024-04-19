@@ -1,0 +1,39 @@
+.home {
+  &__banner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__banner-content {
+    flex: 4;
+    &__title {
+      font-size: var(--heading-1);
+      font-weight: 600;
+    }
+    &__details {
+      font-size: var(--heading-3);
+    }
+    &__more {
+      text-decoration: underline;
+      color: var(--primary-color);
+      cursor: pointer;
+    }
+  }
+
+  &__banner-image {
+    flex: 6;
+  }
+
+  &__category {
+    margin-top: 48px;
+    display: flex;
+  }
+
+  &__category-item {
+    margin-right: 24px;
+  }
+
+  &__category-img {
+    border-radius: 50%;
+  }
+}

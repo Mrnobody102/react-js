@@ -20,3 +20,23 @@
   font-weight: 300;
   font-family: sans-serif;
 }
+
+.link {
+  text-decoration: none;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--primary-color);
+}
+
+.border-right {
+  border-right: 1px solid var(--primary-color);
+}
+
+.under-line {
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--underline-color);
+}

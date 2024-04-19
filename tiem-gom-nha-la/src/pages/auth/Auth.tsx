@@ -10,7 +10,7 @@ import MasterTitle from '../../components/title/MasterTitle'
 
 function LoginAndSignUp() {
   return (
-    <div className='App'>
+    <div className='auth-wrapper'>
       <header className='app__title'>
         <MasterTitle />
       </header>

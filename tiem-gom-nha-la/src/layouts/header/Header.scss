@@ -1,0 +1,26 @@
+header {
+  padding: 0 12%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 3px -2px rgba(0, 0, 0, 0.15);
+}
+
+.header-items {
+  display: flex;
+  align-items: center;
+  margin-left: 1.2rem;
+}
+
+.header-items span {
+  margin-left: 0.4rem;
+}
+
+.searchbox input[type='text']::placeholder {
+  color: var(--placeholder-color);
+  font-size: small;
+  font-family: 'Alexandria';
+  font-weight: 400 !important;
+}
+
+.searchbox input {
+  border: 1px solid var(--darkerborder-color);
+}

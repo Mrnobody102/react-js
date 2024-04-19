@@ -1,0 +1,14 @@
+.rating-side {
+  flex: 1;
+  margin: 28px 24px;
+}
+
+.rating-side span {
+  font-size: var(--heading-4);
+}
+
+.star {
+  color: rgb(255, 183, 1);
+  font-size: var(--heading-1);
+  margin-right: 12px;
+}
