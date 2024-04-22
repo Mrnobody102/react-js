@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './Layout.scss'
 
 interface Props {
-  locator: string
+  locator?: string
   children: React.ReactNode
 }
 

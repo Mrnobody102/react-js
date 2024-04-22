@@ -2,9 +2,9 @@ import { IconType } from 'react-icons'
 import './Input.scss'
 
 interface Props {
-  width: string
-  height: string
-  placeholder: string
+  width?: string
+  height?: string
+  placeholder?: string
   icon: IconType
 }
 

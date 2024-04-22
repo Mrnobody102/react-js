@@ -1,14 +1,12 @@
-import { Checkbox } from 'antd'
 import './Input.scss'
 
 interface Props {
   label?: string
 }
 
-const CustomCheckbox: React.FC<Props> = ({ label }) => {
+const ColorPicker: React.FC<Props> = ({ label }) => {
   return (
     <>
-      <Checkbox />{' '}
       <label className='label--checkbox' htmlFor=''>
         {label}
       </label>
@@ -16,4 +14,4 @@ const CustomCheckbox: React.FC<Props> = ({ label }) => {
   )
 }
 
-export default CustomCheckbox
+export default ColorPicker

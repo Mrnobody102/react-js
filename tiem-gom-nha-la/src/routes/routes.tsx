@@ -5,6 +5,8 @@ import Auth from '../pages/auth/Auth'
 import Layout from '../layouts/Layout'
 import Categories from '../pages/categories/Categories'
 import Details from '../pages/details/Details'
+import Wishlist from '../pages/wishlist/Wishlist'
+import Cart from '../pages/cart/Cart'
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const routes = createBrowserRouter([
       {
         path: 'home',
         element: <Home />
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       },
       {
         path: 'lo-hoa',
