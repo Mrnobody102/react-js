@@ -2,6 +2,60 @@ import { Link } from 'react-router-dom'
 import './Products.scss'
 import Rating from '../../components/rating/Rating'
 import Dropdown from '../../components/dropdown/Dropdown'
+import type { MenuProps } from 'antd'
+import { Menu } from 'antd'
+import CustomPagination from '../../components/pagination/Pagination'
+
+type MenuItem = Required<MenuProps>['items'][number]
+
+function getItem(
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: MenuItem[],
+  type?: 'group'
+): MenuItem {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type
+  } as MenuItem
+}
+
+const items: MenuProps['items'] = [
+  getItem('Danh Mục', 'danh-muc', null, [
+    getItem('Lọ Hoa', 'lo-hoa'),
+    getItem('Bộ Ấm Trà', 'bo-am-tra'),
+    getItem('Đồ Nhà Bếp', 'do-nha-bep'),
+    getItem('Đồ Trang Trí', 'do-trang-tri'),
+    getItem('Đồ Thờ', 'do-tho'),
+    getItem('Đồ Thủy Tinh', 'do-thuy-tinh'),
+    getItem('Design Trend', 'design-trend')
+  ]),
+  { type: 'divider' },
+  getItem('Danh Mục', 'danh-muc', null, [
+    getItem('Lọ Hoa', 'lo-hoa'),
+    getItem('Bộ Ấm Trà', 'bo-am-tra'),
+    getItem('Đồ Nhà Bếp', 'do-nha-bep'),
+    getItem('Đồ Trang Trí', 'do-trang-tri'),
+    getItem('Đồ Thờ', 'do-tho'),
+    getItem('Đồ Thủy Tinh', 'do-thuy-tinh'),
+    getItem('Design Trend', 'design-trend')
+  ]),
+  { type: 'divider' },
+  getItem('Danh Mục', 'danh-muc', null, [
+    getItem('Lọ Hoa', 'lo-hoa'),
+    getItem('Bộ Ấm Trà', 'bo-am-tra'),
+    getItem('Đồ Nhà Bếp', 'do-nha-bep'),
+    getItem('Đồ Trang Trí', 'do-trang-tri'),
+    getItem('Đồ Thờ', 'do-tho'),
+    getItem('Đồ Thủy Tinh', 'do-thuy-tinh'),
+    getItem('Design Trend', 'design-trend')
+  ]),
+  { type: 'divider' }
+]
 
 interface Props {
   name: string
@@ -10,18 +64,29 @@ interface Props {
   }
 }
 
-const Sidebar: React.FC<Props> = ({ name, listProducts }) => {
+const Products: React.FC<Props> = ({ name, listProducts }) => {
+  const onClick: MenuProps['onClick'] = (e) => {
+    console.log('click ', e)
+  }
   return (
     <>
       <div className='sidebar'>
         <div className='sibebar-container'>
-          <span className='sidebar__title'>Danh mục</span>
+          {/* <span className='sidebar__title'>Danh mục</span>
           <div className='sidebar__list'>
             <span className='sidebar__item'>{name}</span>
             <span className='sidebar__item'>{name}</span>
             <span className='sidebar__item'>{name}</span>
             <span className='sidebar__item'>{name}</span>
-          </div>
+          </div> */}
+          <Menu
+            onClick={onClick}
+            style={{ width: 256 }}
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            mode='inline'
+            items={items}
+          />
         </div>
       </div>
       <div className='products'>
@@ -89,9 +154,10 @@ const Sidebar: React.FC<Props> = ({ name, listProducts }) => {
             </div>
           </Link>
         </div>
+        <CustomPagination />
       </div>
     </>
   )
 }
 
-export default Sidebar
+export default Products

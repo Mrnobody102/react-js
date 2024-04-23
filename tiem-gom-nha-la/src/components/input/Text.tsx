@@ -5,7 +5,7 @@ interface Props {
   width?: string
   height?: string
   placeholder?: string
-  icon: IconType
+  icon?: IconType
 }
 
 const Text: React.FC<Props> = ({ width, height, placeholder, icon: Icon }) => {

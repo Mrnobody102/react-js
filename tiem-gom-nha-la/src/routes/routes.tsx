@@ -7,6 +7,7 @@ import Categories from '../pages/categories/Categories'
 import Details from '../pages/details/Details'
 import Wishlist from '../pages/wishlist/Wishlist'
 import Cart from '../pages/cart/Cart'
+import Payment from '../pages/payment/Payment'
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
       {
         path: 'cart',
         element: <Cart />
+      },
+      {
+        path: 'payment',
+        element: <Payment />
       },
       {
         path: 'lo-hoa',

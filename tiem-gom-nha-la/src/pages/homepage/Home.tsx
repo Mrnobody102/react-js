@@ -17,7 +17,6 @@ function Home() {
         <div className='home__category-item'>
           <img
             className='home__category-img'
-            className='home__category-img'
             src='https://img.lazcdn.com/g/ff/kf/S369df73fa729448eb2f25fd585dac75eX.jpg_720x720q80.jpg'
             alt=''
           />

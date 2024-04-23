@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import './Button.scss'
 interface Props {
   to?: string
@@ -9,9 +10,10 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ to, name, color, bgColor, border, borderRadius }) => {
+  const nav = useNavigate()
   return (
     <button
-      onClick={() => (to ? (window.location.href = to) : null)}
+      onClick={() => nav(to ? to : '')}
       className='button button--primary'
       style={{ color: color, backgroundColor: bgColor, border: border, borderRadius: borderRadius }}
     >

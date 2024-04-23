@@ -120,9 +120,15 @@ const Cart: React.FC<Props> = function () {
             Tổng cộng <span className='font-bold'>{'2.000.000'} đ</span>
           </div>
           <div className='cart__button'>
-            <Button name='TIẾP TỤC MUA' bgColor='white' color='black' border='1px solid var(--border-color)' />
+            <Button
+              to='/home'
+              name='TIẾP TỤC MUA'
+              bgColor='white'
+              color='black'
+              border='1px solid var(--border-color)'
+            />
             <div className='mr-5'></div>
-            <Button name='ĐẶT HÀNG TẤT CẢ' />
+            <Button to='/payment' name='ĐẶT HÀNG TẤT CẢ' />
           </div>
         </div>
       </div>

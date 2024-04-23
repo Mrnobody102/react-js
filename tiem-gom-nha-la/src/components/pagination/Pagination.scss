@@ -1,0 +1,25 @@
+.ant-pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ant-pagination-item {
+  font-family: 'Alexandria' !important;
+  font-size: var(--heading-2);
+  a {
+    font-weight: bold;
+    color: var(--secondary-text-color) !important;
+  }
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.ant-pagination-item-active {
+  background-color: var(--bg-color) !important;
+  border: none !important;
+  a {
+    color: var(--secondary-text-color) !important;
+    font-weight: bold;
+  }
+  text-decoration: underline;
+}
