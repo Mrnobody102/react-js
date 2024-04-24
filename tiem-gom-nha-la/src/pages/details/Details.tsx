@@ -5,6 +5,7 @@ import Counter from '../../components/input/Counter'
 import Button from '../../components/button/Button'
 import Reviews from '../../layouts/reviews/Reviews'
 import { BiHeart } from 'react-icons/bi'
+import SimilarProduct from '../../layouts/similar-product/SimilarProduct'
 
 interface Props {
   id: string
@@ -86,6 +87,7 @@ const Details: React.FC<Props> = ({ id }) => {
           <Reviews />
         </div>
       </div>
+      <SimilarProduct />
     </div>
   )
 }

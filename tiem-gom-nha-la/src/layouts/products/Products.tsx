@@ -98,61 +98,19 @@ const Products: React.FC<Props> = ({ name, listProducts }) => {
           <div> {listProducts.length} sản phẩm </div>
         </div>
         <div className='grid grid-cols-3'>
-          <Link to={'1'} className='link product-item'>
-            <div className='product-item__image'>
-              <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
-            </div>
-            <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
+          <div className='product-item'>
+            <Link className='link' to={'1'}>
+              <div className='product-item__image'>
+                <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
+              </div>
+              <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
+            </Link>
             <Rating star={2.5} number={5} />
             <div className='flex justify-between items-baseline mt-3'>
               <div className='text-xl font-semibold'>350.000</div>
               <div className='text-sm font-normal'>Đã bán 1k</div>
             </div>
-          </Link>
-          <Link to={''} className='link product-item'>
-            <div className='product-item__image'>
-              <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
-            </div>
-            <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
-            <Rating star={2.5} number={5} />
-            <div className='flex justify-between items-baseline mt-3'>
-              <div className='text-xl font-semibold'>350.000</div>
-              <div className='text-sm font-normal'>Đã bán 1k</div>
-            </div>
-          </Link>
-          <Link to={''} className='link product-item'>
-            <div className='product-item__image'>
-              <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
-            </div>
-            <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
-            <Rating star={2.5} number={5} />
-            <div className='flex justify-between items-baseline mt-3'>
-              <div className='text-xl font-semibold'>350.000</div>
-              <div className='text-sm font-normal'>Đã bán 1k</div>
-            </div>
-          </Link>
-          <Link to={''} className='link product-item'>
-            <div className='product-item__image'>
-              <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
-            </div>
-            <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
-            <Rating star={2.5} number={5} />
-            <div className='flex justify-between items-baseline mt-3'>
-              <div className='text-xl font-semibold'>350.000</div>
-              <div className='text-sm font-normal'>Đã bán 1k</div>
-            </div>
-          </Link>
-          <Link to={''} className='link product-item'>
-            <div className='product-item__image'>
-              <img src='https://nganhadecor.com/wp-content/uploads/2018/01/4386146279_56640729.jpg' alt='' />
-            </div>
-            <div className='my-3'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH TRANG TRỌNG</div>
-            <Rating star={2.5} number={5} />
-            <div className='flex justify-between items-baseline mt-3'>
-              <div className='text-xl font-semibold'>350.000</div>
-              <div className='text-sm font-normal'>Đã bán 1k</div>
-            </div>
-          </Link>
+          </div>
         </div>
         <CustomPagination />
       </div>

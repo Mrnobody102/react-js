@@ -1,0 +1,53 @@
+.reviews {
+  background-color: white;
+}
+
+.review__comment-item {
+  padding: 24px 24px;
+  border-bottom: var(--secondary-boder);
+}
+
+.review__imgs {
+  text-align: left;
+  border-bottom: var(--secondary-boder);
+  padding: 12px 24px;
+}
+
+.review__img {
+  padding-right: 12px;
+  padding-bottom: 12px;
+}
+
+.reviewer {
+  display: flex;
+}
+
+.review__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.reviewer__info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 12px;
+}
+
+.review__comment-content {
+  text-align: left;
+  margin-left: 12px;
+  margin-top: 8px;
+  span {
+    margin-left: 84px;
+  }
+}
+
+.review__comment-imgs {
+  margin: 24px 84px;
+}
+
+.review__comment-img {
+  padding-right: 12px;
+}
