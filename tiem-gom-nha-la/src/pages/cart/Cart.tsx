@@ -4,10 +4,28 @@ import Counter from '../../components/input/Counter'
 import { BiTrash } from 'react-icons/bi'
 import './Cart.scss'
 import Button from '../../components/button/Button'
+import { useDispatch } from 'react-redux'
+import { removeItem } from 'src/redux/cart/slice'
 
-interface Props {}
+export type CartItemTypes = {
+  id: string
+  name: string
+  price: number
+  imageUrl: string
+  types: []
+  rating: number
+  count: number
+}
 
-const Cart: React.FC<Props> = function () {
+const Cart: React.FC<CartItemTypes> = ({
+  id
+  // , name, price, imageUrl, types, rating, count
+}) => {
+  const dispatch = useDispatch()
+
+  const deleteItem = () => {
+    dispatch(removeItem(id))
+  }
   return (
     <div>
       <div className='mb-8'>
@@ -59,7 +77,7 @@ const Cart: React.FC<Props> = function () {
           <div className='flex items-center'>
             <div className='cart-item__option'>
               <Counter />
-              <div className='cart-item__remove'>
+              <div className='cart-item__remove' onClick={deleteItem}>
                 <BiTrash />
               </div>
             </div>
