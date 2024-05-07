@@ -3,10 +3,11 @@ import './Layout.scss'
 
 interface Props {
   locator?: string
+  to?: string
   children: React.ReactNode
 }
 
-const Layout: React.FC<Props> = ({ locator, children }) => {
+const Layout: React.FC<Props> = ({ locator, to, children }) => {
   return (
     <div className='layout'>
       <div className='locator'>
@@ -14,7 +15,7 @@ const Layout: React.FC<Props> = ({ locator, children }) => {
           Trang chủ
         </Link>
         /{' '}
-        <Link className='link' to={'/home'}>
+        <Link className='link' to={'/' + to}>
           {locator}
         </Link>
       </div>

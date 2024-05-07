@@ -5,16 +5,16 @@ import { BiTrash } from 'react-icons/bi'
 import './Cart.scss'
 import Button from '../../components/button/Button'
 import { useDispatch } from 'react-redux'
-import { removeItem } from 'src/redux/cart/slice'
+import { removeItem } from '../../redux/cart/slice'
 
 export type CartItemTypes = {
   id: string
-  name: string
-  price: number
-  imageUrl: string
-  types: []
-  rating: number
-  count: number
+  name?: string
+  price?: number
+  imageUrl?: string
+  types?: []
+  rating?: number
+  count?: number
 }
 
 const Cart: React.FC<CartItemTypes> = ({

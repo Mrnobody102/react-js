@@ -8,23 +8,28 @@ header {
   display: flex;
   align-items: center;
   margin-left: 1.2rem;
+
+  svg {
+    font-size: var(--heading-1);
+  }
+
+  > span {
+    margin-left: 0.4rem;
+  }
 }
 
-.header-items svg {
-  font-size: var(--heading-1);
+.searchbox {
+  input {
+    border: 1px solid var(--darkerborder-color);
+  }
+  input[type='text']::placeholder {
+    color: var(--placeholder-color);
+    font-size: small;
+    font-family: 'Alexandria';
+    font-weight: 400 !important;
+  }
 }
 
-.header-items span {
-  margin-left: 0.4rem;
-}
-
-.searchbox input[type='text']::placeholder {
-  color: var(--placeholder-color);
-  font-size: small;
-  font-family: 'Alexandria';
-  font-weight: 400 !important;
-}
-
-.searchbox input {
-  border: 1px solid var(--darkerborder-color);
+.header-cart:hover .header-cart-item {
+  color: var(--primary-color);
 }

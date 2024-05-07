@@ -1,0 +1,14 @@
+.design-trend-item {
+  text-align: left;
+  margin-right: 18px;
+
+  &__title {
+    font-size: var(--heading-2);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-size: 0.9rem;
+  }
+}

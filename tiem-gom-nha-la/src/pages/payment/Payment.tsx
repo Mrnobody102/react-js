@@ -132,24 +132,7 @@ const Payment: React.FC<Props> = function () {
         </div>
         <div className='payment-products'>
           <div className='payment-product-item'>
-            <Badge count={5}>
-              <img
-                src='https://gomsuthanhluong.com/wp-content/uploads/2021/06/13125-lo-ke-soc-men-hoa-bien-bat-trang_result.png'
-                alt=''
-              />
-            </Badge>
-            <div className='payment-product-info'>
-              <div className='payment-product-title'>
-                <div className='payment-product-name'>BÌNH HOA TRANG TRÍ PHÒNG KHÁCH SANG TRỌNG</div>
-                <div>250.000 X 2</div>
-              </div>
-              <div className='payment-product-price'>
-                <div className='font-bold'>500.000đ</div>
-              </div>
-            </div>
-          </div>
-          <div className='payment-product-item'>
-            <Badge count={5}>
+            <Badge count={2} color='var(--primary-color)' style={{ fontFamily: 'Alexandria' }}>
               <img
                 src='https://gomsuthanhluong.com/wp-content/uploads/2021/06/13125-lo-ke-soc-men-hoa-bien-bat-trang_result.png'
                 alt=''

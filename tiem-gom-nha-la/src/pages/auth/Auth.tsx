@@ -53,7 +53,7 @@ function LoginAndSignUp() {
             </div>
             <div className='oauth__item'>
               <FcGoogle />
-              <Link className='oauth__link' to={''}>
+              <Link className='oauth__link' to={'http://localhost:8080/login/oauth2/code/google'}>
                 ĐĂNG NHẬP VỚI GOOGLE
               </Link>
             </div>

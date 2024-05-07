@@ -4,6 +4,7 @@ import './Header.scss'
 import { FaSearch } from 'react-icons/fa'
 import Navbar from '../navbar/Navbar'
 import { BiCart, BiHeart, BiUser } from 'react-icons/bi'
+import { Badge } from 'antd'
 
 interface Props {}
 
@@ -21,8 +22,15 @@ const Header: React.FC<Props> = () => {
             <BiHeart />
             <span>WISHLIST</span>
           </Link>
-          <Link to={'cart'} className='link header-items'>
-            <BiCart />
+          <Link to={'cart'} className='link header-items header-cart'>
+            <Badge
+              count={3}
+              size='small'
+              color='var(--primary-color)'
+              style={{ fontFamily: 'Alexandria', fontSize: '0.6rem' }}
+            >
+              <BiCart className='header-cart-item' />
+            </Badge>
             <span>GIỎ HÀNG</span>
           </Link>
           <Link to={'account'} className='link header-items'>

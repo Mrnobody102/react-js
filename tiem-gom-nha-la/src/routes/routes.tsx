@@ -8,6 +8,7 @@ import Details from '../pages/details/Details'
 import Wishlist from '../pages/wishlist/Wishlist'
 import Cart from '../pages/cart/Cart'
 import Payment from '../pages/payment/Payment'
+import DesignTrend from '../pages/post/DesignTrend'
 
 const routes = createBrowserRouter([
   {
@@ -28,15 +29,19 @@ const routes = createBrowserRouter([
       },
       {
         path: 'cart',
-        element: <Cart />
+        element: <Cart id='1' />
       },
       {
         path: 'payment',
         element: <Payment />
       },
       {
+        path: 'design-trend',
+        element: <Layout locator='Design Trend' children={<DesignTrend />} />
+      },
+      {
         path: 'lo-hoa',
-        element: <Layout locator='Lọ hoa' children={<Categories name='Lọ hoa' />} />
+        element: <Layout locator='Lọ hoa' to='lo-hoa' children={<Categories name='Lọ hoa' />} />
       },
       {
         path: 'lo-hoa/:id',

@@ -25,7 +25,16 @@ function getItem(
 }
 
 const items: MenuProps['items'] = [
-  getItem('Danh Mục', 'danh-muc', null, [
+  getItem('Danh Mục', 'category', null, [
+    getItem('Lọ Hoa', 'lo-hoa'),
+    getItem('Bộ Ấm Trà', 'bo-am-tra'),
+    getItem('Đồ Nhà Bếp', 'do-nha-bep'),
+    getItem('Đồ Trang Trí', 'do-trang-tri'),
+    getItem('Đồ Thờ', 'do-tho'),
+    getItem('Đồ Thủy Tinh', 'do-thuy-tinh'),
+    getItem('Design Trend', 'design-trend')
+  ]),
+  getItem('Đánh Giá', 'rating', null, [
     getItem('Lọ Hoa', 'lo-hoa'),
     getItem('Bộ Ấm Trà', 'bo-am-tra'),
     getItem('Đồ Nhà Bếp', 'do-nha-bep'),
@@ -35,7 +44,7 @@ const items: MenuProps['items'] = [
     getItem('Design Trend', 'design-trend')
   ]),
   { type: 'divider' },
-  getItem('Danh Mục', 'danh-muc', null, [
+  getItem('Giá', 'price', null, [
     getItem('Lọ Hoa', 'lo-hoa'),
     getItem('Bộ Ấm Trà', 'bo-am-tra'),
     getItem('Đồ Nhà Bếp', 'do-nha-bep'),
@@ -45,7 +54,17 @@ const items: MenuProps['items'] = [
     getItem('Design Trend', 'design-trend')
   ]),
   { type: 'divider' },
-  getItem('Danh Mục', 'danh-muc', null, [
+  getItem('Kích Thước', 'size', null, [
+    getItem('Lọ Hoa', 'lo-hoa'),
+    getItem('Bộ Ấm Trà', 'bo-am-tra'),
+    getItem('Đồ Nhà Bếp', 'do-nha-bep'),
+    getItem('Đồ Trang Trí', 'do-trang-tri'),
+    getItem('Đồ Thờ', 'do-tho'),
+    getItem('Đồ Thủy Tinh', 'do-thuy-tinh'),
+    getItem('Design Trend', 'design-trend')
+  ]),
+  { type: 'divider' },
+  getItem('Màu Sắc', 'color', null, [
     getItem('Lọ Hoa', 'lo-hoa'),
     getItem('Bộ Ấm Trà', 'bo-am-tra'),
     getItem('Đồ Nhà Bếp', 'do-nha-bep'),
@@ -57,6 +76,17 @@ const items: MenuProps['items'] = [
   { type: 'divider' }
 ]
 
+const sortItems: MenuProps['items'] = [
+  {
+    label: <a href='https://www.antgroup.com'>Mới nhất</a>,
+    key: '0'
+  },
+  {
+    label: <a href='https://www.aliyun.com'>Giá tốt nhất</a>,
+    key: '1'
+  }
+]
+
 interface Props {
   name: string
   listProducts: {
@@ -65,7 +95,7 @@ interface Props {
 }
 
 const Products: React.FC<Props> = ({ name, listProducts }) => {
-  const onClick: MenuProps['onClick'] = (e) => {
+  const handleSelectViewProductBy: MenuProps['onClick'] = (e) => {
     console.log('click ', e)
   }
   return (
@@ -80,7 +110,7 @@ const Products: React.FC<Props> = ({ name, listProducts }) => {
             <span className='sidebar__item'>{name}</span>
           </div> */}
           <Menu
-            onClick={onClick}
+            onClick={handleSelectViewProductBy}
             style={{ width: 256 }}
             defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
@@ -93,7 +123,7 @@ const Products: React.FC<Props> = ({ name, listProducts }) => {
         <div className='flex justify-between mb-4'>
           <div>
             {' '}
-            <Dropdown name='Mới nhất' />
+            <Dropdown items={sortItems} name='Mới nhất' />
           </div>
           <div> {listProducts.length} sản phẩm </div>
         </div>
