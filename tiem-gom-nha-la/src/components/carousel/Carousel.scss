@@ -6,3 +6,20 @@
   text-align: center;
   background: #364d79;
 }
+
+.carousel-img-container {
+  height: 480px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-img {
+  height: 100%; /* Đảm bảo chiều cao của hình ảnh bằng với container */
+  width: auto;
+  position: absolute;
+  left: 50%; /* Đưa ảnh về giữa theo trục ngang */
+  top: 50%; /* Đưa ảnh về giữa theo trục dọc */
+  transform: translate(-50%, -50%); /* Dịch chuyển ảnh về trung tâm */
+  object-fit: cover; /* crop hình ảnh để vừa với kích thước của container */
+}

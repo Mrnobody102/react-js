@@ -46,6 +46,46 @@ const routes = createBrowserRouter([
       {
         path: 'lo-hoa/:id',
         element: <Layout locator='Lọ hoa' children={<Details id={'1'} />} />
+      },
+      {
+        path: 'bo-am-tra',
+        element: <Layout locator='Bộ ấm trà' to='lo-hoa' children={<Categories name='Bộ ấm trà' />} />
+      },
+      {
+        path: 'bo-am-tra/:id',
+        element: <Layout locator='Bộ ấm trà' children={<Details id={'1'} />} />
+      },
+      {
+        path: 'do-trang-tri',
+        element: <Layout locator='Đồ trang trí' to='do-trang-tri' children={<Categories name='Đồ trang trí' />} />
+      },
+      {
+        path: 'do-trang-tri/:id',
+        element: <Layout locator='Đồ trang trí' children={<Details id={'1'} />} />
+      },
+      {
+        path: 'do-nha-bep',
+        element: <Layout locator='Đồ nhà bếp' to='do-nha-bep' children={<Categories name='Đồ nhà bếp' />} />
+      },
+      {
+        path: 'do-nha-bep/:id',
+        element: <Layout locator='Đồ nhà bếp' children={<Details id={'1'} />} />
+      },
+      {
+        path: 'do-tho',
+        element: <Layout locator='Đồ thờ' to='do-tho' children={<Categories name='Đồ thờ' />} />
+      },
+      {
+        path: 'do-tho/:id',
+        element: <Layout locator='Đồ thờ' children={<Details id={'1'} />} />
+      },
+      {
+        path: 'do-thuy-tinh',
+        element: <Layout locator='Đồ thủy tinh' to='do-thuy-tinh' children={<Categories name='Đồ thủy tinh' />} />
+      },
+      {
+        path: 'do-thuy-tinh/:id',
+        element: <Layout locator='Đồ thủy tinh' children={<Details id={'1'} />} />
       }
     ]
   },

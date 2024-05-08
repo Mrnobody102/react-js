@@ -17,13 +17,12 @@ export const cartSlice = createSlice({
     addItem(state, action: PayloadAction<CartItemSlice>) {
       const findItem = state.items.find((obj) => obj.id === action.payload.id) // поиск схожих пицц по id при добавлении в корзину
       if (findItem) {
-        findItem.count++ //добавление
+        findItem.count++
       } else {
         state.items.push({ ...action.payload, count: 1 }) //добавление в items.count
       }
 
       state.totalPrice = state.items.reduce((sum, obj) => {
-        // подсчет сумму за все пиццы
         return obj.price * obj.count + sum
       }, 0)
     },
@@ -36,11 +35,9 @@ export const cartSlice = createSlice({
       state.totalPrice = calcTotalPrice(state.items)
     },
     removeItem(state, action: PayloadAction<string>) {
-      //удаление выборочной пиццы
       state.items = state.items.filter((obj) => obj.id !== action.payload)
 
       state.totalPrice = state.items.reduce((sum, obj) => {
-        // подсчет сумму за все пиццы
         return obj.price * obj.count + sum
       }, 0)
     },

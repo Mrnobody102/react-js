@@ -24,7 +24,7 @@ const Header: React.FC<Props> = () => {
           </Link>
           <Link to={'cart'} className='link header-items header-cart'>
             <Badge
-              count={3}
+              count={4}
               size='small'
               color='var(--primary-color)'
               style={{ fontFamily: 'Alexandria', fontSize: '0.6rem' }}

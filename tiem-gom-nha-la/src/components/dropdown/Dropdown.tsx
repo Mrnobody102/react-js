@@ -9,7 +9,7 @@ interface Props {
   items: ItemType[]
 }
 
-const App: React.FC<Props> = ({ name, items }) => (
+const CustomDropdown: React.FC<Props> = ({ name, items }) => (
   <Dropdown menu={{ items }} trigger={['click']}>
     <a className='link' onClick={(e) => e.preventDefault()}>
       <Space>
@@ -20,4 +20,4 @@ const App: React.FC<Props> = ({ name, items }) => (
   </Dropdown>
 )
 
-export default App
+export default CustomDropdown

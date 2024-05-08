@@ -10,6 +10,7 @@ import SimilarProduct from '../../layouts/similar-product/SimilarProduct'
 interface Props {
   id: string
 }
+
 const Details: React.FC<Props> = ({ id }) => {
   return (
     <div>

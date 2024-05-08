@@ -1,20 +1,22 @@
 import { Carousel } from 'antd'
 import './Carousel.scss'
 
-function CarouselComponent() {
-  return (
-    <Carousel autoplay>
-      <div>
-        <h3 className='carousel'>1</h3>
-      </div>
-      <div>
-        <h3 className='carousel'>2</h3>
-      </div>
-      <div>
-        <h3 className='carousel'>3</h3>
-      </div>
-    </Carousel>
-  )
+interface Carousel {
+  img: string
 }
+
+interface Props {
+  items: Array<Carousel>
+}
+
+const CarouselComponent: React.FC<Props> = ({ items }) => (
+  <Carousel autoplay>
+    {items.map((item) => (
+      <div className='carousel-img-container'>
+        <img className='carousel-img' src={item.img} />
+      </div>
+    ))}
+  </Carousel>
+)
 
 export default CarouselComponent
